@@ -1,0 +1,4 @@
+user-agent: *
+Disallow: /admin/
+
+Sitemap: https://www.thewistoriawandmanga.live/sitemap.xml
