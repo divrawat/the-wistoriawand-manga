@@ -1,6 +1,6 @@
 
-export const DOMAIN = 'http://localhost:3000';
-// export const DOMAIN = 'https://www.thewistoriawandmanga.live';
+// export const DOMAIN = 'http://localhost:3000';
+export const DOMAIN = 'https://www.thewistoriawandmanga.live';
 
 export const DOMAIN_NAME = 'thewistoriawandmanga.live';
 
