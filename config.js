@@ -4,8 +4,8 @@ export const DOMAIN = 'https://www.thewistoriawandmanga.live';
 
 export const DOMAIN_NAME = 'thewistoriawandmanga.live';
 
-export const IMAGES_SUBDOMAIN = 'https://images.mangatoons.online/wistorias-wand-and-sword';
-export const IMAGES_SUBDOMAIN_LOGO = 'https://images.mangatoons.online';
+export const IMAGES_SUBDOMAIN = 'https://images.mangachimp.com/wistorias-wand-and-sword';
+export const IMAGES_SUBDOMAIN_LOGO = 'https://images.mangachimp.com';
 
 // export const MANGA_DESCRIPTION0 = `<a href="${DOMAIN}"><u>Vinland Saga</u></a>`;
 
