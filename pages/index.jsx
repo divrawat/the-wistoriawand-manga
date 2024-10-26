@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG, RelatedMangaLinks, DOMAIN_NAME, MANGA_TYPE } from "@/config";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
@@ -156,7 +157,14 @@ export default function Home() {
     ]
   };
 
-
+  useEffect(() => {
+    var ads = document.getElementsByClassName('adsbygoogle').length;
+    for (var i = 0; i < ads; i++) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) { }
+    }
+  }, []);
 
 
 
@@ -190,6 +198,14 @@ export default function Home() {
       {head()}
       <Navbar />
       <article>
+
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-1721485376950080"
+          data-ad-slot="9515651808"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
 
         <div className="md:flex md:mb-[60px] mb-5 pt-3 relative bg-[black]">
           {/* <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${BEHIND_COVER_IMG})`, opacity: '0.25' }}></div> */}
@@ -235,7 +251,13 @@ export default function Home() {
         </div>
 
 
-
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-1721485376950080"
+          data-ad-slot="9191623334"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
 
 
         <h2 id="readmanga" className="font-extrabold text-3xl my-10 px-4 text-center">
@@ -271,6 +293,15 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-1721485376950080"
+          data-ad-slot="9515651808"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
 
 
 

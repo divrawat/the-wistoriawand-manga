@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
 import { APP_NAME, DOMAIN, MANGA_NAME, NEXT_PREVIOUS_PREFIX, IMAGE_PREFIX, CHAPTER_PREFIX, AUTHOR_PAGE, LOGO_URL, chaptersData, IMAGES_SUBDOMAIN, DOMAIN_NAME, MANGA_GENRE, MANGA_TYPE } from '@/config';
+import { useState, useEffect } from 'react';
+import React from 'react';
 // import DisqusComments from '@/components/DisQus';
 export const runtime = 'experimental-edge';
 
@@ -225,11 +227,34 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
     );
 
 
+
+    useEffect(() => {
+        var ads = document.getElementsByClassName('adsbygoogle').length;
+        for (var i = 0; i < ads; i++) {
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) { }
+        }
+    }, []);
+
+
+
+
+
+
+
     return (
         <>
             {head()}
             <Navbar />
             <article>
+                <ins className="adsbygoogle"
+                    style={{ display: 'block' }}
+                    data-ad-client="ca-pub-1721485376950080"
+                    data-ad-slot="9515651808"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true">
+                </ins>
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</h1>
                 <p className='text-center px-4'><b>{`You are reading ${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</b></p>
 
@@ -258,13 +283,61 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 </div>
 
+
+
                 <div className='max-w-[1200px] mx-auto mb-5'>
+                    {imageUrls.map((imageUrl, index) => (
+                        <React.Fragment key={index}>
+                            <div className='allimages'>
+                                <img
+                                    width={700}
+                                    height={600}
+                                    loading="lazy"
+                                    src={imageUrl}
+                                    alt={`Chapter ${chapterNumber} Image ${index + 1}`}
+                                />
+                            </div>
+
+                            {/* Insert ad after images 3, 4, and 7 */}
+                            {(index === 2 || index === 3 || index === 6) && (
+                                <ins
+                                    className="adsbygoogle"
+                                    style={{ display: 'block' }}
+                                    data-ad-client="ca-pub-1721485376950080"
+                                    data-ad-slot="9515651808"
+                                    data-ad-format="auto"
+                                    data-full-width-responsive="true"
+                                ></ins>
+                            )}
+                        </React.Fragment>
+                    ))}
+                </div>
+
+
+
+
+
+                {/* <div className='max-w-[1200px] mx-auto mb-5'>
                     {imageUrls.map((imageUrl, index) => (
                         <div className='allimages' key={index}>
                             <img width={700} height={600} loading="lazy" src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
                         </div>
                     ))}
-                </div>
+                </div> */}
+
+
+
+                <ins className="adsbygoogle"
+                    style={{ display: 'block' }}
+                    data-ad-client="ca-pub-1721485376950080"
+                    data-ad-slot="9515651808"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true">
+                </ins>
+
+
+
+
 
                 {/* <div className='py-10 bg-[#0f0511]'>
                     <h2 className='text-4xl text-center text-[white] font-blod px-4 mb-10'>Comment Section</h2>
