@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
-import { APP_NAME, DOMAIN, MANGA_NAME, NEXT_PREVIOUS_PREFIX, IMAGE_PREFIX, CHAPTER_PREFIX, AUTHOR_PAGE, LOGO_URL, chaptersData, IMAGES_SUBDOMAIN, DOMAIN_NAME, MANGA_GENRE, MANGA_TYPE } from '@/config';
+import { APP_NAME, DOMAIN, MANGA_NAME, NEXT_PREVIOUS_PREFIX, IMAGE_PREFIX, CHAPTER_PREFIX, AUTHOR_PAGE, LOGO_URL, chaptersData, IMAGES_SUBDOMAIN, DOMAIN_NAME, MANGA_GENRE, MANGA_TYPE, MANGA_SUMMARY } from '@/config';
 import { useState, useEffect } from 'react';
 import React from 'react';
 // import DisqusComments from '@/components/DisQus';
@@ -336,7 +336,15 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                 </ins>
 
 
-
+                <div className="bg-[black] relative">
+                    <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}
+                    <div className="pt-10 pb-10 max-w-[1100px] mx-auto px-5 text-[white] relative z-10">
+                        <h2 className="text-center font-extrabold text-3xl">{`More About ${MANGA_NAME} Manga`}</h2>
+                        {MANGA_SUMMARY.map(paragraph => (
+                            <p className="py-7 leading-[2]" key={paragraph.id}>{paragraph.content}</p>
+                        ))}
+                    </div>
+                </div>
 
 
                 {/* <div className='py-10 bg-[#0f0511]'>
