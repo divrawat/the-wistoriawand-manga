@@ -199,13 +199,7 @@ export default function Home() {
       <Navbar />
       <article>
 
-        <ins className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-1721485376950080"
-          data-ad-slot="9515651808"
-          data-ad-format="auto"
-          data-full-width-responsive="true">
-        </ins>
+
 
         <div className="md:flex md:mb-[60px] mb-5 pt-3 relative bg-[black]">
           {/* <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${BEHIND_COVER_IMG})`, opacity: '0.25' }}></div> */}
@@ -251,13 +245,7 @@ export default function Home() {
         </div>
 
 
-        <ins className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-1721485376950080"
-          data-ad-slot="9191623334"
-          data-ad-format="auto"
-          data-full-width-responsive="true">
-        </ins>
+
 
 
         <h2 id="readmanga" className="font-extrabold text-3xl my-10 px-4 text-center">
@@ -269,7 +257,7 @@ export default function Home() {
           {chapters.map((chapter) => (
             <div className="flex hover:scale-105 active:scale-95 transition-transform" key={chapter.number}>
               <a
-                // onClick={handleRedirect}
+                onClick={handleRedirect}
                 href={chapter.url} className="p-5 hover:underline">
                 <p className="w-[200px] text-center p-5 border border-l-8 border-[black] font-bold break-words">
                   {`Chapter ${chapter.number}`}
@@ -294,14 +282,6 @@ export default function Home() {
           </div>
         </div>
 
-
-        <ins className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-1721485376950080"
-          data-ad-slot="9515651808"
-          data-ad-format="auto"
-          data-full-width-responsive="true">
-        </ins>
 
 
 
