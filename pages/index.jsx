@@ -4,6 +4,7 @@ import Link from "next/link";
 import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG, RelatedMangaLinks, DOMAIN_NAME, MANGA_TYPE } from "@/config";
 import Head from "next/head";
 import { useState, useEffect } from "react";
+const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
 
 export default function Home() {
 
@@ -199,6 +200,7 @@ export default function Home() {
       <Navbar />
       <article>
 
+        <AdSense />
 
 
         <div className="md:flex md:mb-[60px] mb-5 pt-3 relative bg-[black]">
@@ -270,7 +272,7 @@ export default function Home() {
 
 
 
-
+        <AdSense />
 
         <div className="bg-[black] relative">
           <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}

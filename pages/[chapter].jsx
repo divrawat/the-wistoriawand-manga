@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 // import DisqusComments from '@/components/DisQus';
 export const runtime = 'experimental-edge';
+const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
 
 export default function Chapter({ chapterNumber, imageUrls, totalChapters, params, errorcode }) {
 
@@ -241,6 +242,8 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             <Navbar />
             <article>
 
+                <AdSense />
+
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</h1>
                 <p className='text-center px-4'><b>{`You are reading ${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</b></p>
 
@@ -269,7 +272,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 </div>
 
-
+                <AdSense />
 
 
                 <div className='max-w-[1200px] mx-auto mb-5'>
