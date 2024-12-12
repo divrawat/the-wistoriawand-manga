@@ -228,14 +228,6 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
 
 
-    useEffect(() => {
-        var ads = document.getElementsByClassName('adsbygoogle').length;
-        for (var i = 0; i < ads; i++) {
-            try {
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) { }
-        }
-    }, []);
 
 
 
@@ -248,13 +240,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             {head()}
             <Navbar />
             <article>
-                <ins className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-1721485376950080"
-                    data-ad-slot="9515651808"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true">
-                </ins>
+
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</h1>
                 <p className='text-center px-4'><b>{`You are reading ${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</b></p>
 
@@ -262,7 +248,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     <div className="flex justify-between max-w-[800px] mx-auto md:mb-[50px] mt-5">
                         {previousChapter !== null ? (
                             <Link
-                                // onClick={handleRedirect}
+                                onClick={handleRedirect}
                                 href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${previousChapter}`}>
                                 <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Previous Chapter</button>
                             </Link>
@@ -272,7 +258,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
                         {nextChapter !== null ? (
                             <Link
-                                // onClick={handleRedirect}
+                                onClick={handleRedirect}
                                 href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${nextChapter}`}>
                                 <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Next Chapter</button>
                             </Link>
@@ -285,55 +271,15 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
 
 
+
                 <div className='max-w-[1200px] mx-auto mb-5'>
-                    {imageUrls.map((imageUrl, index) => (
-                        <React.Fragment key={index}>
-                            <div className='allimages'>
-                                <img
-                                    width={700}
-                                    height={600}
-                                    loading="lazy"
-                                    src={imageUrl}
-                                    alt={`Chapter ${chapterNumber} Image ${index + 1}`}
-                                />
-                            </div>
-
-                            {/* Insert ad after images 3, 4, and 7 */}
-                            {(index === 2 || index === 3 || index === 6) && (
-                                <ins
-                                    className="adsbygoogle"
-                                    style={{ display: 'block' }}
-                                    data-ad-client="ca-pub-1721485376950080"
-                                    data-ad-slot="9515651808"
-                                    data-ad-format="auto"
-                                    data-full-width-responsive="true"
-                                ></ins>
-                            )}
-                        </React.Fragment>
-                    ))}
-                </div>
-
-
-
-
-
-                {/* <div className='max-w-[1200px] mx-auto mb-5'>
                     {imageUrls.map((imageUrl, index) => (
                         <div className='allimages' key={index}>
                             <img width={700} height={600} loading="lazy" src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
                         </div>
                     ))}
-                </div> */}
+                </div>
 
-
-
-                <ins className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-1721485376950080"
-                    data-ad-slot="9515651808"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true">
-                </ins>
 
 
                 {/* <div className="bg-[black] relative">
