@@ -242,8 +242,6 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             <Navbar />
             <article>
 
-                <AdSense />
-
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</h1>
                 <p className='text-center px-4'><b>{`You are reading ${MANGA_NAME} ${MANGA_TYPE} Chapter ${chapterNumber}`}</b></p>
 
@@ -251,7 +249,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     <div className="flex justify-between max-w-[800px] mx-auto md:mb-[50px] mt-5">
                         {previousChapter !== null ? (
                             <Link
-                                // onClick={handleRedirect}
+                                onClick={handleRedirect}
                                 href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${previousChapter}`}>
                                 <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Previous Chapter</button>
                             </Link>
@@ -261,7 +259,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
                         {nextChapter !== null ? (
                             <Link
-                                // onClick={handleRedirect}
+                                onClick={handleRedirect}
                                 href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${nextChapter}`}>
                                 <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Next Chapter</button>
                             </Link>
@@ -272,7 +270,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 </div>
 
-                <AdSense />
+
 
 
                 <div className='max-w-[1200px] mx-auto mb-5'>

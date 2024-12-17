@@ -200,8 +200,6 @@ export default function Home() {
       <Navbar />
       <article>
 
-        <AdSense />
-
 
         <div className="md:flex md:mb-[60px] mb-5 pt-3 relative bg-[black]">
           {/* <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${BEHIND_COVER_IMG})`, opacity: '0.25' }}></div> */}
@@ -259,7 +257,7 @@ export default function Home() {
           {chapters.map((chapter) => (
             <div className="flex hover:scale-105 active:scale-95 transition-transform" key={chapter.number}>
               <a
-                // onClick={handleRedirect}
+                onClick={handleRedirect}
                 href={chapter.url} className="p-5 hover:underline">
                 <p className="w-[200px] text-center p-5 border border-l-8 border-[black] font-bold break-words">
                   {`Chapter ${chapter.number}`}
@@ -270,9 +268,6 @@ export default function Home() {
 
         </div>
 
-
-
-        <AdSense />
 
         <div className="bg-[black] relative">
           <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}
