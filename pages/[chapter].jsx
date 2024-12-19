@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 // import DisqusComments from '@/components/DisQus';
 export const runtime = 'experimental-edge';
-const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
+// const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
 
 export default function Chapter({ chapterNumber, imageUrls, totalChapters, params, errorcode }) {
 
