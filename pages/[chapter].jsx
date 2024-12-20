@@ -337,7 +337,7 @@ export async function getServerSideProps({ req, res, params }) {
     const numImages = chapterData.numImages;
     const imageUrls = getImageUrls(chapterNumber, numImages);
 
-    res.setHeader('Cache-Control', 'public, s-maxage=108000, stale-while-revalidate=59');
+    // res.setHeader('Cache-Control', 'public, s-maxage=108000, stale-while-revalidate=59');
 
     return { props: { chapterNumber, imageUrls, totalChapters, params, chapterIndex } };
 }
